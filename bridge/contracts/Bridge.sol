@@ -12,7 +12,7 @@ contract Bridge {
         manager = _manager;
     }
     
-    function transferTo(address receiver, uint amount) onlyManager {
+    function transferTo(address receiver, uint amount) public onlyManager {
         receiver.transfer(amount);
     }
 }
