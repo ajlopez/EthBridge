@@ -1,6 +1,16 @@
 const Bridge = artifacts.require('./Bridge');
 const BasicBridgeManager = artifacts.require('./BasicBridgeManager');
 
+async function expectThrow (promise) {
+  try {
+    await promise;
+  } catch (error) {
+      return;
+  }
+  
+  assert.fail('Expected throw not received');
+}
+
 contract('Simple Bridge Manager', function (accounts) {
     const ownerAccount = accounts[0];
     const receiverAccount = accounts[1];
@@ -34,12 +44,7 @@ contract('Simple Bridge Manager', function (accounts) {
     it('transfer to account without using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
-        try {
-            await this.bridge.transferTo(receiverAccount, 1000, { from: ownerAccount });
-            assert.fail();
-        }
-        catch (ex) {
-        }
+        expectThrow(this.bridge.transferTo(receiverAccount, 1000, { from: ownerAccount }));
     });
 });
 
