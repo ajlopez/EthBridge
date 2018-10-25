@@ -11,6 +11,17 @@ async function expectThrow (promise) {
   assert.fail('Expected throw not received');
 }
 
+// from https://ethereum.stackexchange.com/questions/11444/web3-js-with-promisified-api
+
+const promisify = (inner) =>
+  new Promise((resolve, reject) =>
+    inner((err, res) => {
+      if (err) { reject(err) }
+
+      resolve(res);
+    })
+);
+
 contract('Bridge', function (accounts) {
     const creatorAccount = accounts[0];
     const managerAccount = accounts[1];
@@ -39,11 +50,14 @@ contract('Bridge', function (accounts) {
       
         assert.ok(initialReceiverBalance.add(1000).equals(finalReceiverBalance));
         
-        const transferEvent = this.bridge.Transfer({}, { fromBlock: 0, toBlock: 'latest' });
+        const transferEvent = this.bridge.Transfer({}, { fromBlock: 1, toBlock: 'latest' });
+
+        const logs = await promisify(cb => transferEvent.get(cb));
         
-        const transferEventGet = util.promisify(transferEvent.get);
-        
-        const logs = await transferEventGet();        
+        assert.ok(logs);
+        assert.ok(Array.isArray(logs));
+        assert.ok(logs.length);
+        assert.equal(logs[0].event, 'Transfer');
     });
 
     it('transfer to account without using manager', async function () {
