@@ -60,6 +60,29 @@ contract('Bridge', function (accounts) {
         assert.equal(logs[0].event, 'Release');
     });
 
+    it('transfer to bridge generates lock event', async function () {
+        const txhash = await web3.eth.sendTransaction({ from: accounts[0], to: this.bridge.address, value: 1000, gas: 100000 });
+
+        var receipt;
+        
+        do {
+            receipt = await web3.eth.getTransactionReceipt(txhash);
+        } while(receipt == null);
+
+        const bridgeBalance = await web3.eth.getBalance(this.bridge.address);  
+        
+        assert.equal(bridgeBalance.toNumber(), 1000000 + 1000);
+        
+        const lockEvent = this.bridge.Lock({}, { fromBlock: 1, toBlock: 'latest' });
+
+        const logs = await promisify(cb => lockEvent.get(cb));
+        
+        assert.ok(logs);
+        assert.ok(Array.isArray(logs));
+        assert.ok(logs.length);
+        assert.equal(logs[0].event, 'Lock');
+    });
+
     it('transfer to account without using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
