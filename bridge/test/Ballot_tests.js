@@ -22,5 +22,17 @@ contract('Ballot', function (accounts) {
         assert.equal(votes.length, 1);
         assert.equal(votes[0], accounts[0]);
     });
+    
+    it('two votes for proposal', async function () {
+        await this.ballot.voteProposal(1, accounts[0]);
+        await this.ballot.voteProposal(1, accounts[1]);
+        
+        const votes = await this.ballot.proposalVotes(1);
+        
+        assert.ok(Array.isArray(votes));
+        assert.equal(votes.length, 2);
+        assert.equal(votes[0], accounts[0]);
+        assert.equal(votes[1], accounts[1]);
+    });
 });
 
