@@ -8,7 +8,14 @@ contract Ballot {
     }
     
     function voteProposal(bytes32 _proposalId, address _voter) {
-        votes[_proposalId].push(_voter);
+        address[] storage proposalVotes = votes[_proposalId];
+        uint nvotes = proposalVotes.length;
+        
+        for (uint k = 0; k < nvotes; k++)
+            if (_voter == proposalVotes[k])
+                return;
+
+        proposalVotes.push(_voter);
     }
 }
 
