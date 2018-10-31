@@ -50,14 +50,14 @@ contract('Bridge', function (accounts) {
       
         assert.ok(initialReceiverBalance.add(1000).equals(finalReceiverBalance));
         
-        const transferEvent = this.bridge.Transfer({}, { fromBlock: 1, toBlock: 'latest' });
+        const releaseEvent = this.bridge.Release({}, { fromBlock: 1, toBlock: 'latest' });
 
-        const logs = await promisify(cb => transferEvent.get(cb));
+        const logs = await promisify(cb => releaseEvent.get(cb));
         
         assert.ok(logs);
         assert.ok(Array.isArray(logs));
         assert.ok(logs.length);
-        assert.equal(logs[0].event, 'Transfer');
+        assert.equal(logs[0].event, 'Release');
     });
 
     it('transfer to account without using manager', async function () {
