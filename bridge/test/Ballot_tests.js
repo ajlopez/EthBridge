@@ -60,6 +60,12 @@ contract('Ballot', function (accounts) {
         assert.ok(Array.isArray(votes2));
         assert.equal(votes2.length, 1);
         assert.equal(votes2[0], accounts[1]);
+        
+        var closed1 = await this.ballot.proposalClosed(1);
+        assert.ok(!closed1);
+        
+        var closed2 = await this.ballot.proposalClosed(2);
+        assert.ok(!closed2);
     });
 
     it('two votes for proposal and mark it as accepted', async function () {
@@ -71,6 +77,9 @@ contract('Ballot', function (accounts) {
         
         assert.ok(Array.isArray(votes));
         assert.equal(votes.length, 0);
+        
+        const closed = await this.ballot.proposalClosed(1);
+        assert.ok(closed);
     });
 });
 

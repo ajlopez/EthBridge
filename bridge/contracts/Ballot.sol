@@ -2,12 +2,13 @@ pragma solidity ^0.4.24;
 
 contract Ballot {
     mapping (bytes32 => address[]) votes;
+    mapping (bytes32 => bool) closed;
     
     function proposalVotes(bytes32 _proposalId) public view returns (address[]) {
         return votes[_proposalId];
     }
     
-    function voteProposal(bytes32 _proposalId, address _voter) {
+    function voteProposal(bytes32 _proposalId, address _voter) public {
         address[] storage proposalVotes = votes[_proposalId];
         uint nvotes = proposalVotes.length;
         
@@ -18,8 +19,13 @@ contract Ballot {
         proposalVotes.push(_voter);
     }
 
-    function acceptProposal(bytes32 _proposalId) {
+    function acceptProposal(bytes32 _proposalId) public {
         delete votes[_proposalId];
+        closed[_proposalId] = true;
+    }
+    
+    function proposalClosed(bytes32 _proposalId) public view returns (bool) {
+        return closed[_proposalId];
     }
 }
 
