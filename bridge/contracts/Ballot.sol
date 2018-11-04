@@ -9,14 +9,14 @@ contract Ballot {
     }
     
     function voteProposal(bytes32 _proposalId, address _voter) public {
-        address[] storage proposalVotes = votes[_proposalId];
-        uint nvotes = proposalVotes.length;
+        address[] storage propVotes = votes[_proposalId];
+        uint nvotes = propVotes.length;
         
         for (uint k = 0; k < nvotes; k++)
-            if (_voter == proposalVotes[k])
+            if (_voter == propVotes[k])
                 return;
 
-        proposalVotes.push(_voter);
+        propVotes.push(_voter);
     }
 
     function acceptProposal(bytes32 _proposalId) public {
