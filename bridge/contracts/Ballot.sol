@@ -17,5 +17,9 @@ contract Ballot {
 
         proposalVotes.push(_voter);
     }
+
+    function acceptProposal(bytes32 _proposalId) {
+        delete votes[_proposalId];
+    }
 }
 
