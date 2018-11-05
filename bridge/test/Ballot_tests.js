@@ -81,5 +81,19 @@ contract('Ballot', function (accounts) {
         const closed = await this.ballot.proposalClosed(1);
         assert.ok(closed);
     });
+    
+    it('no vote is accepted after proposal was accepted', async function () {
+        await this.ballot.voteProposal(1, accounts[0]);
+        await this.ballot.acceptProposal(1);
+        await this.ballot.voteProposal(1, accounts[1]);
+        
+        const votes = await this.ballot.proposalVotes(1);
+        
+        assert.ok(Array.isArray(votes));
+        assert.equal(votes.length, 0);
+        
+        const closed = await this.ballot.proposalClosed(1);
+        assert.ok(closed);
+    });
 });
 
