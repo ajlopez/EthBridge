@@ -1,6 +1,16 @@
 const Ballot = artifacts.require('./Ballot');
 const util = require('util');
 
+async function expectThrow (promise) {
+  try {
+    await promise;
+  } catch (error) {
+      return;
+  }
+  
+  assert.fail('Expected throw not received');
+}
+
 contract('Ballot', function (accounts) {
     beforeEach(async function () {
         this.ballot = await Ballot.new();
@@ -21,6 +31,15 @@ contract('Ballot', function (accounts) {
         assert.ok(Array.isArray(votes));
         assert.equal(votes.length, 1);
         assert.equal(votes[0], accounts[0]);
+    });
+    
+    it('only ballot owner can vote', async function () {
+        expectThrow(this.ballot.voteProposal(1, accounts[0], { from: accounts[1] }));
+        
+        const votes = await this.ballot.proposalVotes(1);
+        
+        assert.ok(Array.isArray(votes));
+        assert.equal(votes.length, 0);
     });
     
     it('two votes for proposal', async function () {
