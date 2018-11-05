@@ -1,26 +1,8 @@
 const Bridge = artifacts.require('./Bridge');
 const util = require('util');
 
-async function expectThrow (promise) {
-  try {
-    await promise;
-  } catch (error) {
-      return;
-  }
-  
-  assert.fail('Expected throw not received');
-}
-
-// from https://ethereum.stackexchange.com/questions/11444/web3-js-with-promisified-api
-
-const promisify = (inner) =>
-  new Promise((resolve, reject) =>
-    inner((err, res) => {
-      if (err) { reject(err) }
-
-      resolve(res);
-    })
-);
+const expectThrow = require('./utils').expectThrow;
+const promisify = require('./utils').promisify;
 
 contract('Bridge', function (accounts) {
     const creatorAccount = accounts[0];

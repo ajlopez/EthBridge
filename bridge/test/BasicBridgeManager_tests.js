@@ -1,15 +1,7 @@
 const Bridge = artifacts.require('./Bridge');
 const BasicBridgeManager = artifacts.require('./BasicBridgeManager');
 
-async function expectThrow (promise) {
-  try {
-    await promise;
-  } catch (error) {
-      return;
-  }
-  
-  assert.fail('Expected throw not received');
-}
+const expectThrow = require('./utils').expectThrow;
 
 contract('Simple Bridge Manager', function (accounts) {
     const ownerAccount = accounts[0];

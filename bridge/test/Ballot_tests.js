@@ -1,15 +1,7 @@
 const Ballot = artifacts.require('./Ballot');
 const util = require('util');
 
-async function expectThrow (promise) {
-  try {
-    await promise;
-  } catch (error) {
-      return;
-  }
-  
-  assert.fail('Expected throw not received');
-}
+const expectThrow = require('./utils').expectThrow;
 
 contract('Ballot', function (accounts) {
     beforeEach(async function () {
