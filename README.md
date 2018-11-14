@@ -8,6 +8,7 @@ Simple implementation using Solidity and JavaScript scripts.
 
 - [Retrofitting a two-way peg between blockchains](https://people.cs.uchicago.edu/~teutsch/papers/dogethereum.pdf)
 - [Sentinel Bridge RSK](https://github.com/InfoCorp-Technologies/sentinel-bridge-rsk)
+- [Parity Bridge](https://github.com/paritytech/parity-bridge)
 - [Fallback functions and the fundamental limitations of using send() in Ethereum & Solidity](https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Fallback-functions-and-the-fundamental-limitations-of-using-send()-in-Ethereum-&-Solidity)
 - [Ethereum 2.0 spec—Casper and sharding](https://github.com/ethereum/eth2.0-specs/blob/master/specs/beacon-chain.md)
 - [Ethereum Sharding Explained Simply](https://www.mangoresearch.co/ethereum-sharding-explained-simply/)
