@@ -9,8 +9,16 @@ contract('Simple Bridge Manager', function (accounts) {
     
     beforeEach(async function () {
         this.manager = await BasicBridgeManager.new();
-        this.bridge = await Bridge.new(this.manager.address, { value: 1000000 });
+        this.bridge = await Bridge.new(this.manager.address);
         await this.manager.setBridge(this.bridge.address);
+
+        const txhash = await web3.eth.sendTransaction({ from: accounts[0], to: this.bridge.address, value: 1000000, gas: 100000 });
+
+        var receipt;
+        
+        do {
+            receipt = await web3.eth.getTransactionReceipt(txhash);
+        } while(receipt == null);
     });
     
     it('initial ether balance for tests', async function () {

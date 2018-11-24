@@ -10,7 +10,15 @@ contract('Bridge', function (accounts) {
     const receiverAccount = accounts[2];
     
     beforeEach(async function () {
-        this.bridge = await Bridge.new(managerAccount, { value: 1000000 });
+        this.bridge = await Bridge.new(managerAccount);
+
+        const txhash = await web3.eth.sendTransaction({ from: accounts[0], to: this.bridge.address, value: 1000000, gas: 100000 });
+
+        var receipt;
+        
+        do {
+            receipt = await web3.eth.getTransactionReceipt(txhash);
+        } while(receipt == null);
     });
     
     it('initial ether balance for tests', async function () {

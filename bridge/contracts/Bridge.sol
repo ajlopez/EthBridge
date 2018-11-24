@@ -11,7 +11,7 @@ contract Bridge {
         _;
     }
     
-    constructor(address _manager) payable public {
+    constructor(address _manager) public {
         manager = _manager;
     }
     
