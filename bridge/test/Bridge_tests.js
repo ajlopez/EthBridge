@@ -48,6 +48,10 @@ contract('Bridge', function (accounts) {
         assert.ok(Array.isArray(logs));
         assert.ok(logs.length);
         assert.equal(logs[0].event, 'Release');
+        
+        assert.equal(logs[0].args.receiver, receiverAccount);
+        assert.equal(logs[0].args.nrelease, 1);
+        assert.equal(logs[0].args.amount, 1000);
     });
 
     it('transfer to bridge generates lock event', async function () {
@@ -70,7 +74,17 @@ contract('Bridge', function (accounts) {
         assert.ok(logs);
         assert.ok(Array.isArray(logs));
         assert.ok(logs.length);
+        assert.equal(logs.length, 2);
+        
         assert.equal(logs[0].event, 'Lock');
+        assert.equal(logs[0].args.sender, accounts[0]);
+        assert.equal(logs[0].args.nlock, 1);
+        assert.equal(logs[0].args.amount, 1000000);
+        
+        assert.equal(logs[1].event, 'Lock');
+        assert.equal(logs[1].args.sender, accounts[0]);
+        assert.equal(logs[1].args.nlock, 2);
+        assert.equal(logs[1].args.amount, 1000);
     });
 
     it('transfer to account without using manager', async function () {

@@ -2,9 +2,11 @@ pragma solidity ^0.4.24;
 
 contract Bridge {
     address manager;
+    uint nreleases;
+    uint nlocks;
 
-    event Lock(address sender, uint amount);
-    event Release(address receiver, uint amount);
+    event Lock(address sender, uint nlock, uint amount);
+    event Release(address receiver, uint nrelease, uint amount);
     
     modifier onlyManager() {
         require(msg.sender == manager);
@@ -17,11 +19,11 @@ contract Bridge {
     
     function transferTo(address receiver, uint amount) public onlyManager {
         receiver.transfer(amount);
-        emit Release(receiver, amount);
+        emit Release(receiver, ++nreleases, amount);
     }
     
     function () public payable {
-        emit Lock(msg.sender, msg.value);
+        emit Lock(msg.sender, ++nlocks, msg.value);
     }
 }
 
