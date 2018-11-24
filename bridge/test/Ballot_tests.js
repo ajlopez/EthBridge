@@ -93,6 +93,22 @@ contract('Ballot', function (accounts) {
         assert.ok(closed);
     });
     
+    it('only ballot owner can accept proposal', async function () {
+        await this.ballot.voteProposal(1, accounts[0]);
+        await this.ballot.voteProposal(1, accounts[1]);
+        expectThrow(this.ballot.acceptProposal(1, { from: accounts[2] }));
+        
+        const votes = await this.ballot.proposalVotes(1);
+        
+        assert.ok(Array.isArray(votes));
+        assert.equal(votes.length, 2);
+        assert.equal(votes[0], accounts[0]);
+        assert.equal(votes[1], accounts[1]);
+        
+        const closed = await this.ballot.proposalClosed(1);
+        assert.ok(!closed);
+    });
+    
     it('no vote is accepted after proposal was accepted', async function () {
         await this.ballot.voteProposal(1, accounts[0]);
         await this.ballot.acceptProposal(1);

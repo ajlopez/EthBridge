@@ -32,7 +32,7 @@ contract Ballot {
         propVotes.push(_voter);
     }
 
-    function acceptProposal(bytes32 _proposalId) public {
+    function acceptProposal(bytes32 _proposalId) public onlyOwner {
         delete votes[_proposalId];
         closed[_proposalId] = true;
     }
