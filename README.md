@@ -6,6 +6,7 @@ Simple implementation using Solidity and JavaScript scripts.
 
 ## References
 
+- [Proof of Authority](https://en.wikipedia.org/wiki/Proof-of-authority)
 - [Retrofitting a two-way peg between blockchains](https://people.cs.uchicago.edu/~teutsch/papers/dogethereum.pdf)
 - [Sentinel Bridge RSK](https://github.com/InfoCorp-Technologies/sentinel-bridge-rsk)
 - [Parity Bridge](https://github.com/paritytech/parity-bridge)
@@ -14,3 +15,6 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Ethereum Sharding Explained Simply](https://www.mangoresearch.co/ethereum-sharding-explained-simply/)
 - [Ethereum Casper V2: Beacon Chain & Sharding Explained Simply](https://www.mangoresearch.co/ethereum-casper-v2-beacon-chain-sharding-explained-simply/)
 - [Ethereum Beacon Chain](https://github.com/ethereum/beacon_chain)
+- [POA Network Announces ERC20-To-ERC20 TokenBridge](https://www.ethnews.com/poa-network-announces-erc20-to-erc20-tokenbridge)
+- [TokenBridge](https://github.com/poanetwork/token-bridge)
+- [Microsoft Introduces Ethereum Proof-of-Authority Algorithm on Azure](https://cointelegraph.com/news/microsoft-introduces-ethereum-proof-of-authority-algorithm-on-azure)
