@@ -72,11 +72,11 @@ contract('Ballot', function (accounts) {
         assert.equal(votes2.length, 1);
         assert.equal(votes2[0], accounts[1]);
         
-        var closed1 = await this.ballot.proposalClosed(1);
-        assert.ok(!closed1);
+        var accepted1 = await this.ballot.proposalAccepted(1);
+        assert.ok(!accepted1);
         
-        var closed2 = await this.ballot.proposalClosed(2);
-        assert.ok(!closed2);
+        var accepted2 = await this.ballot.proposalAccepted(2);
+        assert.ok(!accepted2);
     });
 
     it('two votes for proposal and mark it as accepted', async function () {
@@ -89,8 +89,8 @@ contract('Ballot', function (accounts) {
         assert.ok(Array.isArray(votes));
         assert.equal(votes.length, 0);
         
-        const closed = await this.ballot.proposalClosed(1);
-        assert.ok(closed);
+        const accepted = await this.ballot.proposalAccepted(1);
+        assert.ok(accepted);
     });
     
     it('only ballot owner can accept proposal', async function () {
@@ -105,8 +105,8 @@ contract('Ballot', function (accounts) {
         assert.equal(votes[0], accounts[0]);
         assert.equal(votes[1], accounts[1]);
         
-        const closed = await this.ballot.proposalClosed(1);
-        assert.ok(!closed);
+        const accepted = await this.ballot.proposalAccepted(1);
+        assert.ok(!accepted);
     });
     
     it('no vote is accepted after proposal was accepted', async function () {
@@ -119,8 +119,8 @@ contract('Ballot', function (accounts) {
         assert.ok(Array.isArray(votes));
         assert.equal(votes.length, 0);
         
-        const closed = await this.ballot.proposalClosed(1);
-        assert.ok(closed);
+        const accepted = await this.ballot.proposalAccepted(1);
+        assert.ok(accepted);
     });
 });
 

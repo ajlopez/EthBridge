@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 contract Ballot {
     address owner;
     mapping (bytes32 => address[]) votes;
-    mapping (bytes32 => bool) closed;
+    mapping (bytes32 => bool) accepted;
     
     constructor() public {
         owner = msg.sender;
@@ -19,7 +19,7 @@ contract Ballot {
     }
     
     function voteProposal(bytes32 _proposalId, address _voter) public onlyOwner {
-        if (closed[_proposalId])
+        if (accepted[_proposalId])
             return;
             
         address[] storage propVotes = votes[_proposalId];
@@ -34,11 +34,11 @@ contract Ballot {
 
     function acceptProposal(bytes32 _proposalId) public onlyOwner {
         delete votes[_proposalId];
-        closed[_proposalId] = true;
+        accepted[_proposalId] = true;
     }
     
-    function proposalClosed(bytes32 _proposalId) public view returns (bool) {
-        return closed[_proposalId];
+    function proposalAccepted(bytes32 _proposalId) public view returns (bool) {
+        return accepted[_proposalId];
     }
 }
 
