@@ -4,6 +4,7 @@ contract Ballot {
     address owner;
     mapping (bytes32 => address[]) votes;
     mapping (bytes32 => bool) accepted;
+    mapping (bytes32 => bool) canceled;
     
     constructor() public {
         owner = msg.sender;
@@ -39,6 +40,15 @@ contract Ballot {
     
     function proposalAccepted(bytes32 _proposalId) public view returns (bool) {
         return accepted[_proposalId];
+    }
+
+    function cancelProposal(bytes32 _proposalId) public onlyOwner {
+        delete votes[_proposalId];
+        canceled[_proposalId] = true;
+    }
+    
+    function proposalCanceled(bytes32 _proposalId) public view returns (bool) {
+        return canceled[_proposalId];
     }
 }
 
