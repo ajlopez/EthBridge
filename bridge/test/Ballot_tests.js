@@ -138,5 +138,22 @@ contract('Ballot', function (accounts) {
         const canceled = await this.ballot.proposalCanceled(1);
         assert.ok(canceled);
     });
+
+    it('no vote is accepted after proposal was canceled', async function () {
+        await this.ballot.voteProposal(1, accounts[0]);
+        await this.ballot.cancelProposal(1);
+        await this.ballot.voteProposal(1, accounts[1]);
+        
+        const votes = await this.ballot.proposalVotes(1);
+        
+        assert.ok(Array.isArray(votes));
+        assert.equal(votes.length, 0);
+        
+        const accepted = await this.ballot.proposalAccepted(1);
+        assert.ok(!accepted);
+        
+        const canceled = await this.ballot.proposalCanceled(1);
+        assert.ok(canceled);
+    });
 });
 

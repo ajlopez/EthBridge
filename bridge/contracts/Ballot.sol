@@ -22,6 +22,9 @@ contract Ballot {
     function voteProposal(bytes32 _proposalId, address _voter) public onlyOwner {
         if (accepted[_proposalId])
             return;
+
+        if (canceled[_proposalId])
+            return;
             
         address[] storage propVotes = votes[_proposalId];
         uint nvotes = propVotes.length;
