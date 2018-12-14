@@ -18,3 +18,5 @@ Simple implementation using Solidity and JavaScript scripts.
 - [POA Network Announces ERC20-To-ERC20 TokenBridge](https://www.ethnews.com/poa-network-announces-erc20-to-erc20-tokenbridge)
 - [TokenBridge](https://github.com/poanetwork/token-bridge)
 - [Microsoft Introduces Ethereum Proof-of-Authority Algorithm on Azure](https://cointelegraph.com/news/microsoft-introduces-ethereum-proof-of-authority-algorithm-on-azure)
+- [Ion Stage 2: State Verification (Part 3)](https://medium.com/clearmatics/ion-stage-2-part-3-state-verification-dbd7ae57f77b)
+
