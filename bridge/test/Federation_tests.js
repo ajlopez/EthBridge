@@ -1,4 +1,5 @@
 const Federation = artifacts.require('./Federation');
+const Ballot = artifacts.require('./Ballot');
 
 contract('Federation', function (accounts) {
     const federators = [accounts[1], accounts[2], accounts[3]];
@@ -31,6 +32,17 @@ contract('Federation', function (accounts) {
             
             assert.ok(!isfed);
         }
+    });
+    
+    it('has ballot and controls it', async function () {
+        const ballot = new Ballot(await this.federation.ballot());
+
+        assert.ok(ballot);
+        
+        const ballotOwner = await ballot.owner();
+        
+        assert.ok(ballotOwner);
+        assert.equal(ballotOwner, this.federation.address);
     });
 });
 

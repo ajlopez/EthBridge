@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 contract Ballot {
-    address owner;
+    address public owner;
     mapping (bytes32 => address[]) votes;
     mapping (bytes32 => bool) accepted;
     mapping (bytes32 => bool) canceled;
@@ -15,7 +15,7 @@ contract Ballot {
         _;
     }
     
-    function proposalVotes(bytes32 _proposalId) public view returns (address[]) {
+    function proposalVotes(bytes32 _proposalId) public view returns (address[] memory) {
         return votes[_proposalId];
     }
     
