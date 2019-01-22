@@ -22,5 +22,11 @@ contract Federation {
                 
         return false;
     }
+    
+    function getTransferVoteId(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount)
+        public pure returns(bytes32)
+    {
+        return keccak256(abi.encodePacked(_blockNumber, _blockHash, _transactionHash, _receiver, _amount));
+    }    
 }
 

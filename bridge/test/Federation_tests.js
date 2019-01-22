@@ -3,7 +3,8 @@ const Ballot = artifacts.require('./Ballot');
 
 contract('Federation', function (accounts) {
     const federators = [accounts[1], accounts[2], accounts[3]];
-    
+    const receiver = accounts[4];
+        
     beforeEach(async function () {
         this.federation = await Federation.new(federators);
     });
@@ -43,6 +44,18 @@ contract('Federation', function (accounts) {
         
         assert.ok(ballotOwner);
         assert.equal(ballotOwner, this.federation.address);
+    });
+    
+    it('get transaction vote id', async function () {
+        const voteid = await this.federation.getTransferVoteId(1, 2, 3, receiver, 1000);
+        
+        assert.ok(voteid);
+        
+        const voteid2 = await this.federation.getTransferVoteId(1, 2, 3, receiver, 1000);
+        const voteid3 = await this.federation.getTransferVoteId(1, 2, 3, receiver, 1001);
+        
+        assert.equal(voteid, voteid2);
+        assert.notEqual(voteid, voteid3);
     });
 });
 
