@@ -22,6 +22,24 @@ contract Federation {
                 
         return false;
     }
+
+    function voteTransfer(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) public {
+        bytes32 id = getTransferVoteId(_blockNumber, _blockHash, _transactionHash, _receiver, _amount);
+        
+        ballot.voteProposal(id, msg.sender);
+    }
+    
+    function getTransferNoVotes(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) view public returns (uint) {
+        bytes32 id = getTransferVoteId(_blockNumber, _blockHash, _transactionHash, _receiver, _amount);
+        
+        return ballot.proposalVotes(id).length;
+    }
+    
+    function getTransferVotes(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) view public returns (address[]) {
+        bytes32 id = getTransferVoteId(_blockNumber, _blockHash, _transactionHash, _receiver, _amount);
+        
+        return ballot.proposalVotes(id);
+    }
     
     function getTransferVoteId(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount)
         public pure returns(bytes32)
