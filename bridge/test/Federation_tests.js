@@ -1,9 +1,12 @@
+const expectThrow = require('./utils').expectThrow;
+
 const Federation = artifacts.require('./Federation');
 const Ballot = artifacts.require('./Ballot');
 
 contract('Federation', function (accounts) {
     const federators = [accounts[1], accounts[2], accounts[3]];
     const receiver = accounts[4];
+    const nonmember = accounts[5];
         
     beforeEach(async function () {
         this.federation = await Federation.new(federators);
@@ -65,7 +68,7 @@ contract('Federation', function (accounts) {
     });
     
     it('vote transfer', async function () {
-        await this.federation.voteTransfer(1, 2, 3, receiver, 1000);
+        await this.federation.voteTransfer(1, 2, 3, receiver, 1000, { from: federators[0] });
 
         const novotes = await this.federation.getTransferNoVotes(1, 2, 3, receiver, 1000);
         
@@ -76,7 +79,21 @@ contract('Federation', function (accounts) {
         assert.ok(votes);
         assert.ok(Array.isArray(votes));
         assert.equal(votes.length, 1);
-        assert.equal(votes[0], accounts[0]);
+        assert.equal(votes[0], federators[0]);
+    });
+    
+    it('only member can vote transfer', async function () {
+        expectThrow(this.federation.voteTransfer(1, 2, 3, receiver, 1000, { from: nonmember }));
+
+        const novotes = await this.federation.getTransferNoVotes(1, 2, 3, receiver, 1000);
+        
+        assert.equal(novotes, 0);
+        
+        const votes = await this.federation.getTransferVotes(1, 2, 3, receiver, 1000);
+        
+        assert.ok(votes);
+        assert.ok(Array.isArray(votes));
+        assert.equal(votes.length, 0);
     });
 });
 

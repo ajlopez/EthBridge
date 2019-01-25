@@ -22,8 +22,13 @@ contract Federation {
                 
         return false;
     }
+    
+    modifier onlyMember() {
+        require(isFederator(msg.sender));
+        _;
+    }
 
-    function voteTransfer(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) public {
+    function voteTransfer(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) public onlyMember {
         bytes32 id = getTransferVoteId(_blockNumber, _blockHash, _transactionHash, _receiver, _amount);
         
         ballot.voteProposal(id, msg.sender);
