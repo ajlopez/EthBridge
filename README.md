@@ -20,6 +20,8 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Microsoft Introduces Ethereum Proof-of-Authority Algorithm on Azure](https://cointelegraph.com/news/microsoft-introduces-ethereum-proof-of-authority-algorithm-on-azure)
 - [Ion Stage 2: State Verification (Part 3)](https://medium.com/clearmatics/ion-stage-2-part-3-state-verification-dbd7ae57f77b)
 - [The SKALE Tech-Stack](https://medium.com/skale/the-skale-tech-stack-5beb025acb6a)
+- [Blockchain Interoperability — The Aion Transwarp Conduit (TWC)](https://blog.aion.network/blockchain-interoperability-the-aion-transwarp-conduit-twc-4f6ac2e79cec)
+- [Transwarp-Conduit: Interoperable Blockchain Application Framework](https://aion.network/media/TWC_Paper_Final.pdf)
 
 ## License
 
