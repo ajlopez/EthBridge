@@ -20,3 +20,8 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Microsoft Introduces Ethereum Proof-of-Authority Algorithm on Azure](https://cointelegraph.com/news/microsoft-introduces-ethereum-proof-of-authority-algorithm-on-azure)
 - [Ion Stage 2: State Verification (Part 3)](https://medium.com/clearmatics/ion-stage-2-part-3-state-verification-dbd7ae57f77b)
 - [The SKALE Tech-Stack](https://medium.com/skale/the-skale-tech-stack-5beb025acb6a)
+
+## License
+
+MIT
+
