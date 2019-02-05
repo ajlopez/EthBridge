@@ -22,6 +22,10 @@ Simple implementation using Solidity and JavaScript scripts.
 - [The SKALE Tech-Stack](https://medium.com/skale/the-skale-tech-stack-5beb025acb6a)
 - [Blockchain Interoperability — The Aion Transwarp Conduit (TWC)](https://blog.aion.network/blockchain-interoperability-the-aion-transwarp-conduit-twc-4f6ac2e79cec)
 - [Transwarp-Conduit: Interoperable Blockchain Application Framework](https://aion.network/media/TWC_Paper_Final.pdf)
+- [WBTC Is Now Live On Ethereum](https://blog.kyber.network/wbtc-is-now-live-on-ethereum-4b4e2d1ef76f)
+- [Sidechains: Decoupled Consensus Between Chains](https://www.horizen.global/assets/files/Horizen-Sidechains-Decoupled-Consensus-Between-Chains.pdf)
+- [A new Sidechain Proposal by Horizen — Part 1](https://medium.com/coinmonks/a-new-sidechain-proposal-by-horizen-part-1-45610d791a05)
+- [A new Sidechain Proposal by Horizen — Part 2](https://medium.com/coinmonks/a-new-sidechain-proposal-by-horizen-part-2-8e08e6513a16)
 
 ## License
 
