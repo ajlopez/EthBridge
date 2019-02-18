@@ -26,6 +26,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Sidechains: Decoupled Consensus Between Chains](https://www.horizen.global/assets/files/Horizen-Sidechains-Decoupled-Consensus-Between-Chains.pdf)
 - [A new Sidechain Proposal by Horizen — Part 1](https://medium.com/coinmonks/a-new-sidechain-proposal-by-horizen-part-1-45610d791a05)
 - [A new Sidechain Proposal by Horizen — Part 2](https://medium.com/coinmonks/a-new-sidechain-proposal-by-horizen-part-2-8e08e6513a16)
+- [Polkadot](https://polkadot.network/#whatisit)
 
 ## License
 
