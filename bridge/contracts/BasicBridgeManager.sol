@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity >=0.4.21 <0.6.0;
 
 import "./Bridge.sol";
 
@@ -19,7 +19,7 @@ contract BasicBridgeManager {
         bridge = _bridge;
     }
     
-    function transferTo(address receiver, uint amount) public onlyOwner {
+    function transferTo(address payable receiver, uint amount) public onlyOwner {
         bridge.transferTo(receiver, amount);
     }
 }

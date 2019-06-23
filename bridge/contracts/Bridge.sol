@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity >=0.4.21 <0.6.0;
 
 contract Bridge {
     address manager;
@@ -17,12 +17,12 @@ contract Bridge {
         manager = _manager;
     }
     
-    function transferTo(address receiver, uint amount) public onlyManager {
+    function transferTo(address payable receiver, uint amount) public onlyManager {
         receiver.transfer(amount);
         emit Release(receiver, ++nreleases, amount);
     }
     
-    function () public payable {
+    function () external payable {
         emit Lock(msg.sender, ++nlocks, msg.value);
     }
 }

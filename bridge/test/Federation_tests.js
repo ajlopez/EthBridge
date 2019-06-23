@@ -50,31 +50,31 @@ contract('Federation', function (accounts) {
     });
     
     it('get transfer vote id', async function () {
-        const voteid = await this.federation.getTransferVoteId(1, 2, 3, receiver, 1000);
+        const voteid = await this.federation.getTransferVoteId(1, '0x02', '0x03', receiver, 1000);
         
         assert.ok(voteid);
         
-        const voteid2 = await this.federation.getTransferVoteId(1, 2, 3, receiver, 1000);
-        const voteid3 = await this.federation.getTransferVoteId(1, 2, 3, receiver, 1001);
+        const voteid2 = await this.federation.getTransferVoteId(1, '0x02', '0x03', receiver, 1000);
+        const voteid3 = await this.federation.getTransferVoteId(1, '0x02', '0x03', receiver, 1001);
         
         assert.equal(voteid, voteid2);
         assert.notEqual(voteid, voteid3);
     });
     
     it('get transfer no. votes zero', async function () {
-        const novotes = await this.federation.getTransferNoVotes(1, 2, 3, receiver, 1000);
+        const novotes = await this.federation.getTransferNoVotes(1, '0x02', '0x03', receiver, 1000);
         
         assert.equal(novotes, 0);
     });
     
     it('vote transfer', async function () {
-        await this.federation.voteTransfer(1, 2, 3, receiver, 1000, { from: federators[0] });
+        await this.federation.voteTransfer(1, '0x02', '0x03', receiver, 1000, { from: federators[0] });
 
-        const novotes = await this.federation.getTransferNoVotes(1, 2, 3, receiver, 1000);
+        const novotes = await this.federation.getTransferNoVotes(1, '0x02', '0x03', receiver, 1000);
         
         assert.equal(novotes, 1);
         
-        const votes = await this.federation.getTransferVotes(1, 2, 3, receiver, 1000);
+        const votes = await this.federation.getTransferVotes(1, '0x02', '0x03', receiver, 1000);
         
         assert.ok(votes);
         assert.ok(Array.isArray(votes));
@@ -83,13 +83,13 @@ contract('Federation', function (accounts) {
     });
     
     it('only member can vote transfer', async function () {
-        expectThrow(this.federation.voteTransfer(1, 2, 3, receiver, 1000, { from: nonmember }));
+        expectThrow(this.federation.voteTransfer(1, '0x02', '0x03', receiver, 1000, { from: nonmember }));
 
-        const novotes = await this.federation.getTransferNoVotes(1, 2, 3, receiver, 1000);
+        const novotes = await this.federation.getTransferNoVotes(1, '0x02', '0x03', receiver, 1000);
         
         assert.equal(novotes, 0);
         
-        const votes = await this.federation.getTransferVotes(1, 2, 3, receiver, 1000);
+        const votes = await this.federation.getTransferVotes(1, '0x02', '0x03', receiver, 1000);
         
         assert.ok(votes);
         assert.ok(Array.isArray(votes));

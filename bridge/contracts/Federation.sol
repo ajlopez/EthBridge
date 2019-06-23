@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity >=0.4.21 <0.6.0;
 
 import "./Ballot.sol";
 
@@ -40,7 +40,7 @@ contract Federation {
         return ballot.proposalVotes(id).length;
     }
     
-    function getTransferVotes(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) view public returns (address[]) {
+    function getTransferVotes(uint _blockNumber, bytes32 _blockHash, bytes32 _transactionHash, address _receiver, uint _amount) view public returns (address[] memory) {
         bytes32 id = getTransferVoteId(_blockNumber, _blockHash, _transactionHash, _receiver, _amount);
         
         return ballot.proposalVotes(id);
