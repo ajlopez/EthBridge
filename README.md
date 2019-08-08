@@ -31,6 +31,9 @@ Simple implementation using Solidity and JavaScript scripts.
 - [XCLAIM: Trustless, Interoperable, Cryptocurrency-Backed Assets](https://eprint.iacr.org/2018/643.pdf)
 - [ETC to be Tokenized on Ethereum’s Blockchain](https://www.trustnodes.com/2019/03/05/etc-to-be-tokenized-on-ethereums-blockchain)
 - [Waterloo — a Decentralized Practical Bridge between EOS and Ethereum](https://blog.kyber.network/waterloo-a-decentralized-practical-bridge-between-eos-and-ethereum-1c230ac65524)
+- [Ethereum Cross Chain Atomic Swaps](https://medium.com/@DontPanicBurns/ethereum-cross-chain-atomic-swaps-5a91adca4f43)
+- [Bitcoin-Ethereum Atomic Swap Code Now Open Source](https://www.coindesk.com/bitcoin-ethereum-atomic-swap-code-now-open-source)
+- [Ethereum Atomic Swap](https://github.com/AltCoinExchange/ethatomicswap)
 
 ## License
 
