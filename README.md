@@ -31,6 +31,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [XCLAIM: Trustless, Interoperable, Cryptocurrency-Backed Assets](https://eprint.iacr.org/2018/643.pdf)
 - [ETC to be Tokenized on Ethereum’s Blockchain](https://www.trustnodes.com/2019/03/05/etc-to-be-tokenized-on-ethereums-blockchain)
 - [Waterloo — a Decentralized Practical Bridge between EOS and Ethereum](https://blog.kyber.network/waterloo-a-decentralized-practical-bridge-between-eos-and-ethereum-1c230ac65524)
+- [On the optionality and fairness of Atomic Swaps](https://eprint.iacr.org/2019/896.pdf)
 
 ## License
 
