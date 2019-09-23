@@ -35,6 +35,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Bitcoin-Ethereum Atomic Swap Code Now Open Source](https://www.coindesk.com/bitcoin-ethereum-atomic-swap-code-now-open-source)
 - [Ethereum Atomic Swap](https://github.com/AltCoinExchange/ethatomicswap)
 - [On the optionality and fairness of Atomic Swaps](https://eprint.iacr.org/2019/896.pdf)
+- [Portal unveils Atomic Bridge / ZK-Swaps at Silicon Valley Bitcoin Meetup 2019-09-11](https://www.youtube.com/watch?v=x1XoYna5daM&feature=youtu.be)
 
 ## License
 
