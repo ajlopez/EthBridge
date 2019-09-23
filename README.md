@@ -34,6 +34,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Ethereum Cross Chain Atomic Swaps](https://medium.com/@DontPanicBurns/ethereum-cross-chain-atomic-swaps-5a91adca4f43)
 - [Bitcoin-Ethereum Atomic Swap Code Now Open Source](https://www.coindesk.com/bitcoin-ethereum-atomic-swap-code-now-open-source)
 - [Ethereum Atomic Swap](https://github.com/AltCoinExchange/ethatomicswap)
+- [On the optionality and fairness of Atomic Swaps](https://eprint.iacr.org/2019/896.pdf)
 
 ## License
 
