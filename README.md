@@ -38,6 +38,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [On the optionality and fairness of Atomic Swaps](https://eprint.iacr.org/2019/896.pdf)
 - [Portal unveils Atomic Bridge / ZK-Swaps at Silicon Valley Bitcoin Meetup 2019-09-11](https://www.youtube.com/watch?v=x1XoYna5daM&feature=youtu.be)
 - [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
+- [How to Validate Bitcoin Payments in Ethereum (for only 700k gas!)](https://medium.com/summa-technology/cross-chain-auction-technical-f16710bfe69f)
 
 ## License
 
