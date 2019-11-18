@@ -40,6 +40,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
 - [How to Validate Bitcoin Payments in Ethereum (for only 700k gas!)](https://medium.com/summa-technology/cross-chain-auction-technical-f16710bfe69f)
 - [Build An Etheruem Bridge -Part 1](https://medium.com/@ons.bellazreg/build-an-etheruem-bridge-part-1-c6cff915f587)
+- [How to Get Blockchains to Talk to Each Other](https://www.scientificamerican.com/custom-media/msk-cancers-leading-edge/scientists-watch-single-gene-transcription-in-a-living-cell/)
 
 ## License
 
