@@ -42,6 +42,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Build An Etheruem Bridge -Part 1](https://medium.com/@ons.bellazreg/build-an-etheruem-bridge-part-1-c6cff915f587)
 - [How to Get Blockchains to Talk to Each Other](https://www.scientificamerican.com/custom-media/msk-cancers-leading-edge/scientists-watch-single-gene-transcription-in-a-living-cell/)
 - [Centrifuge Chain — the Gateway for Real-World Assets to the Blockchain Multiverse](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1)
+- [Ren Project](https://github.com/renproject/ren/wiki/Introduction)
 
 ## License
 
