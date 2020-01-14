@@ -37,6 +37,10 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Ethereum Atomic Swap](https://github.com/AltCoinExchange/ethatomicswap)
 - [On the optionality and fairness of Atomic Swaps](https://eprint.iacr.org/2019/896.pdf)
 - [Portal unveils Atomic Bridge / ZK-Swaps at Silicon Valley Bitcoin Meetup 2019-09-11](https://www.youtube.com/watch?v=x1XoYna5daM&feature=youtu.be)
+- [Polkadot Bridges](https://wiki.polkadot.network/docs/en/learn-bridges)
+- [Polkadot bridges RFP - come build bridges with us!](https://github.com/w3f/Web3-collaboration/issues/155)
+- [A Decentralized Redeemable BTC-backed ERC-20 Token](http://docs.keep.network/tbtc/index.pdf)
+- [Bitcoin, on Ethereum](https://tbtc.network/)
 
 ## License
 
