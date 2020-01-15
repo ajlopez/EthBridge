@@ -41,6 +41,12 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Polkadot bridges RFP - come build bridges with us!](https://github.com/w3f/Web3-collaboration/issues/155)
 - [A Decentralized Redeemable BTC-backed ERC-20 Token](http://docs.keep.network/tbtc/index.pdf)
 - [Bitcoin, on Ethereum](https://tbtc.network/)
+- [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
+- [How to Validate Bitcoin Payments in Ethereum (for only 700k gas!)](https://medium.com/summa-technology/cross-chain-auction-technical-f16710bfe69f)
+- [Build An Etheruem Bridge -Part 1](https://medium.com/@ons.bellazreg/build-an-etheruem-bridge-part-1-c6cff915f587)
+- [How to Get Blockchains to Talk to Each Other](https://www.scientificamerican.com/custom-media/msk-cancers-leading-edge/scientists-watch-single-gene-transcription-in-a-living-cell/)
+- [Centrifuge Chain — the Gateway for Real-World Assets to the Blockchain Multiverse](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1)
+- [Ren Project](https://github.com/renproject/ren/wiki/Introduction)
 
 ## License
 
