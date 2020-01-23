@@ -17,6 +17,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Ethereum Beacon Chain](https://github.com/ethereum/beacon_chain)
 - [POA Network Announces ERC20-To-ERC20 TokenBridge](https://www.ethnews.com/poa-network-announces-erc20-to-erc20-tokenbridge)
 - [TokenBridge](https://github.com/poanetwork/token-bridge)
+- [TokenBridge documentation site](https://docs.tokenbridge.net/)
 - [Microsoft Introduces Ethereum Proof-of-Authority Algorithm on Azure](https://cointelegraph.com/news/microsoft-introduces-ethereum-proof-of-authority-algorithm-on-azure)
 - [Ion Stage 2: State Verification (Part 3)](https://medium.com/clearmatics/ion-stage-2-part-3-state-verification-dbd7ae57f77b)
 - [The SKALE Tech-Stack](https://medium.com/skale/the-skale-tech-stack-5beb025acb6a)
