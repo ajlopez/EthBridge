@@ -51,6 +51,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [BTC on Ethereum? Bitcoin joins the pTokens family](https://medium.com/@provablethings/btc-on-ethereum-bitcoin-joins-the-ptokens-family-bbee248bfadc)
 - [Proof-of-Work Sidechains](https://eprint.iacr.org/2018/1048.pdf)
 - [Cross-public blockchain bridge](https://twitter.com/iamDCinvestor/status/1227291666660413442)
+- [Near Ethereum decentralized bridge](https://github.com/nearprotocol/near-bridge)
 
 ## License
 
