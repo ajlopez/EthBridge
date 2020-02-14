@@ -52,6 +52,9 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Proof-of-Work Sidechains](https://eprint.iacr.org/2018/1048.pdf)
 - [Cross-public blockchain bridge](https://twitter.com/iamDCinvestor/status/1227291666660413442)
 - [Near Ethereum decentralized bridge](https://github.com/nearprotocol/near-bridge)
+- [First release of tBTC on Ropsten](https://twitter.com/mhluongo/status/1228109565595717633)
+- [tBTC Trustlessly tokenized Bitcoin on Ethereum](https://github.com/keep-network/tbtc)
+- [tBTC DApp](http://dapp.test.tbtc.network/)
 
 ## License
 
