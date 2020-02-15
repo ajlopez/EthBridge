@@ -55,6 +55,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [First release of tBTC on Ropsten](https://twitter.com/mhluongo/status/1228109565595717633)
 - [tBTC Trustlessly tokenized Bitcoin on Ethereum](https://github.com/keep-network/tbtc)
 - [tBTC DApp](http://dapp.test.tbtc.network/)
+- [Non-Interactive Proofs of Proof-of-Work](https://fc20.ifca.ai/preproceedings/74.pdf)
 
 ## License
 
