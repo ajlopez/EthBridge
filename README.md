@@ -56,6 +56,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [tBTC Trustlessly tokenized Bitcoin on Ethereum](https://github.com/keep-network/tbtc)
 - [tBTC DApp](http://dapp.test.tbtc.network/)
 - [Non-Interactive Proofs of Proof-of-Work](https://fc20.ifca.ai/preproceedings/74.pdf)
+- [Why Interoperability Bridges Should Be On Everyone’s Mind](https://u.today/why-interoperability-bridges-should-be-on-everyones-mind)
 
 ## License
 
