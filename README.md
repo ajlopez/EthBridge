@@ -57,6 +57,8 @@ Simple implementation using Solidity and JavaScript scripts.
 - [tBTC DApp](http://dapp.test.tbtc.network/)
 - [Non-Interactive Proofs of Proof-of-Work](https://fc20.ifca.ai/preproceedings/74.pdf)
 - [Why Interoperability Bridges Should Be On Everyone’s Mind](https://u.today/why-interoperability-bridges-should-be-on-everyones-mind)
+- [Proof of Necessary Work: Succinct State Verification with Fairness Guarantees](https://eprint.iacr.org/2020/190.pdf)
+- [Keep tBTC is Now Fully Open-Sourced](https://blog.keep.network/keep-is-now-fully-open-sourced-487930364069)
 
 ## License
 
