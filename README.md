@@ -60,6 +60,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Proof of Necessary Work: Succinct State Verification with Fairness Guarantees](https://eprint.iacr.org/2020/190.pdf)
 - [Keep tBTC is Now Fully Open-Sourced](https://blog.keep.network/keep-is-now-fully-open-sourced-487930364069)
 - [Wrapped Bitcoin Aims to Kickstart DeFi on Tezos Blockchain](https://www.coindesk.com/wrapped-bitcoin-aims-to-kickstart-defi-on-tezos-blockchain)
+- [Consensus for Crosschain Communications](https://arxiv.org/pdf/2004.09494.pdf)
 
 ## License
 
