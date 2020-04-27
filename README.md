@@ -61,6 +61,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Keep tBTC is Now Fully Open-Sourced](https://blog.keep.network/keep-is-now-fully-open-sourced-487930364069)
 - [Wrapped Bitcoin Aims to Kickstart DeFi on Tezos Blockchain](https://www.coindesk.com/wrapped-bitcoin-aims-to-kickstart-defi-on-tezos-blockchain)
 - [Consensus for Crosschain Communications](https://arxiv.org/pdf/2004.09494.pdf)
+- [The Keep and tBTC launch plan](https://blog.keep.network/the-keep-and-tbtc-launch-plan-663153c41187)
 
 ## License
 
