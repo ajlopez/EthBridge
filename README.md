@@ -42,6 +42,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Polkadot bridges RFP - come build bridges with us!](https://github.com/w3f/Web3-collaboration/issues/155)
 - [A Decentralized Redeemable BTC-backed ERC-20 Token](http://docs.keep.network/tbtc/index.pdf)
 - [Bitcoin, on Ethereum](https://tbtc.network/)
+- [tBTC in DeFi Discussions](https://www.crowdcast.io/e/defi-discussions/8)
 - [SoK: Communication Across Distributed Ledgers](https://eprint.iacr.org/2019/1128.pdf)
 - [How to Validate Bitcoin Payments in Ethereum (for only 700k gas!)](https://medium.com/summa-technology/cross-chain-auction-technical-f16710bfe69f)
 - [Build An Etheruem Bridge -Part 1](https://medium.com/@ons.bellazreg/build-an-etheruem-bridge-part-1-c6cff915f587)
