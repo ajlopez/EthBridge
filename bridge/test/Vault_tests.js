@@ -1,18 +1,18 @@
-const Bridge = artifacts.require('./Bridge');
+const Vault = artifacts.require('./Vault');
 const util = require('util');
 
 const expectThrow = require('./utils').expectThrow;
 const promisify = require('./utils').promisify;
 
-contract('Bridge', function (accounts) {
+contract('Vault', function (accounts) {
     const creatorAccount = accounts[0];
     const managerAccount = accounts[1];
     const receiverAccount = accounts[2];
     
     beforeEach(async function () {
-        this.bridge = await Bridge.new(managerAccount);
+        this.vault = await Vault.new(managerAccount);
 
-        const txhash = (await web3.eth.sendTransaction({ from: accounts[0], to: this.bridge.address, value: 1000000, gas: 100000 })).transactionHash;
+        const txhash = (await web3.eth.sendTransaction({ from: accounts[0], to: this.vault.address, value: 1000000, gas: 100000 })).transactionHash;
 
         var receipt;
         
@@ -22,19 +22,19 @@ contract('Bridge', function (accounts) {
     });
     
     it('initial ether balance for tests', async function () {
-        const bridgeBalance = await web3.eth.getBalance(this.bridge.address);
+        const vaultBalance = await web3.eth.getBalance(this.vault.address);
         
-        assert.equal(bridgeBalance, 1000000);
+        assert.equal(vaultBalance, 1000000);
     });
 
     it('transfer to account using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
-        const result = await this.bridge.transferTo(receiverAccount, 1000, { from: managerAccount });
+        const result = await this.vault.transferTo(receiverAccount, 1000, { from: managerAccount });
 
-        const bridgeBalance = await web3.eth.getBalance(this.bridge.address);  
+        const vaultBalance = await web3.eth.getBalance(this.vault.address);  
         
-        assert.equal(bridgeBalance, 1000000 - 1000);
+        assert.equal(vaultBalance, 1000000 - 1000);
         
         const finalReceiverBalance = await web3.eth.getBalance(receiverAccount);
       
@@ -52,8 +52,8 @@ contract('Bridge', function (accounts) {
         assert.equal(logs[0].args.amount, 1000);
     });
 
-    it('transfer to bridge generates lock event', async function () {
-        const txhash = (await web3.eth.sendTransaction({ from: accounts[0], to: this.bridge.address, value: 1000, gas: 100000 })).transactionHash;
+    it('transfer to vault generates lock event', async function () {
+        const txhash = (await web3.eth.sendTransaction({ from: accounts[0], to: this.vault.address, value: 1000, gas: 100000 })).transactionHash;
 
         var receipt;
         
@@ -61,9 +61,9 @@ contract('Bridge', function (accounts) {
             receipt = await web3.eth.getTransactionReceipt(txhash);
         } while(receipt == null);
 
-        const bridgeBalance = await web3.eth.getBalance(this.bridge.address);  
+        const vaultBalance = await web3.eth.getBalance(this.vault.address);  
         
-        assert.equal(bridgeBalance, 1000000 + 1000);
+        assert.equal(vaultBalance, 1000000 + 1000);
         
         console.dir(receipt);
         console.dir(receipt.logs[0].topics);
@@ -84,7 +84,7 @@ contract('Bridge', function (accounts) {
     it('transfer to account without using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
-        expectThrow(this.bridge.transferTo(receiverAccount, 1000, { from: creatorAccount }));
+        expectThrow(this.vault.transferTo(receiverAccount, 1000, { from: creatorAccount }));
     });
 });
 

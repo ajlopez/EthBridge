@@ -1,6 +1,6 @@
 pragma solidity >=0.4.21 <0.6.0;
 
-contract Bridge {
+contract Vault {
     address manager;
     uint nreleases;
     uint nlocks;

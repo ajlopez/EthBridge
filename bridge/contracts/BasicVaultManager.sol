@@ -1,10 +1,10 @@
 pragma solidity >=0.4.21 <0.6.0;
 
-import "./Bridge.sol";
+import "./Vault.sol";
 
-contract BasicBridgeManager {
+contract BasicVaultManager {
     address owner;
-    Bridge bridge;
+    Vault vault;
     
     modifier onlyOwner() {
         require(msg.sender == owner);
@@ -15,12 +15,12 @@ contract BasicBridgeManager {
         owner = msg.sender;
     }
     
-    function setBridge(Bridge _bridge) public onlyOwner {
-        bridge = _bridge;
+    function setVault(Vault _vault) public onlyOwner {
+        vault = _vault;
     }
     
     function transferTo(address payable receiver, uint amount) public onlyOwner {
-        bridge.transferTo(receiver, amount);
+        vault.transferTo(receiver, amount);
     }
 }
 
