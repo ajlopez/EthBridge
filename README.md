@@ -63,6 +63,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Wrapped Bitcoin Aims to Kickstart DeFi on Tezos Blockchain](https://www.coindesk.com/wrapped-bitcoin-aims-to-kickstart-defi-on-tezos-blockchain)
 - [Consensus for Crosschain Communications](https://arxiv.org/pdf/2004.09494.pdf)
 - [The Keep and tBTC launch plan](https://blog.keep.network/the-keep-and-tbtc-launch-plan-663153c41187)
+- [Promise: Leveraging Future Gains for Collateral Reduction](https://eprint.iacr.org/2020/532.pdf)
 
 ## License
 
