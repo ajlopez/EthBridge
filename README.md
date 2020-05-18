@@ -65,6 +65,8 @@ Simple implementation using Solidity and JavaScript scripts.
 - [The Keep and tBTC launch plan](https://blog.keep.network/the-keep-and-tbtc-launch-plan-663153c41187)
 - [Promise: Leveraging Future Gains for Collateral Reduction](https://eprint.iacr.org/2020/532.pdf)
 - [Enabling Cross-chain Transactions: A Decentralized Cryptocurrency Exchange Protocol](https://arxiv.org/pdf/2005.03199.pdf)
+- [WBTC vs TBTC](https://defirate.com/wbtc-vs-tbtc/)
+- [Is tokenized BTC bullish for ETH?](https://bankless.substack.com/p/is-tokenized-btc-bullish-for-eth)
 
 
 ## License
