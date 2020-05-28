@@ -49,6 +49,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [How to Get Blockchains to Talk to Each Other](https://www.scientificamerican.com/custom-media/msk-cancers-leading-edge/scientists-watch-single-gene-transcription-in-a-living-cell/)
 - [Centrifuge Chain — the Gateway for Real-World Assets to the Blockchain Multiverse](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1)
 - [Ren Project](https://github.com/renproject/ren/wiki/Introduction)
+- [RenVM Mainnet Release](https://medium.com/renproject/renvm-mainnet-release-98cac4c6fa8e)
 - [BTC on Ethereum? Bitcoin joins the pTokens family](https://medium.com/@provablethings/btc-on-ethereum-bitcoin-joins-the-ptokens-family-bbee248bfadc)
 - [Proof-of-Work Sidechains](https://eprint.iacr.org/2018/1048.pdf)
 - [Cross-public blockchain bridge](https://twitter.com/iamDCinvestor/status/1227291666660413442)
