@@ -69,6 +69,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [WBTC vs TBTC](https://defirate.com/wbtc-vs-tbtc/)
 - [Is tokenized BTC bullish for ETH?](https://bankless.substack.com/p/is-tokenized-btc-bullish-for-eth)
 - [Details of the tBTC Deposit Pause on May 18, 2020](https://blog.keep.network/details-of-the-tbtc-deposit-pause-on-may-18-2020-38d7dd555663)
+- [Atomic Loans](https://atomic.loans/)
 
 ## License
 
