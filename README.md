@@ -71,6 +71,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Details of the tBTC Deposit Pause on May 18, 2020](https://blog.keep.network/details-of-the-tbtc-deposit-pause-on-may-18-2020-38d7dd555663)
 - [Atomic Loans](https://atomic.loans/)
 - [Bitcoin on Polkadot: Proof-of-Concept for Trustless Bridge Shipped](https://medium.com/interlay/bitcoin-on-polkadot-proof-of-concept-for-trustless-bridge-shipped-6fb8e549bef0)
+- [Blockchain Bridges, Explained](https://cointelegraph.com/explained/blockchain-bridges-explained)
 
 ## License
 
