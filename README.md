@@ -72,6 +72,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Atomic Loans](https://atomic.loans/)
 - [Bitcoin on Polkadot: Proof-of-Concept for Trustless Bridge Shipped](https://medium.com/interlay/bitcoin-on-polkadot-proof-of-concept-for-trustless-bridge-shipped-6fb8e549bef0)
 - [Blockchain Bridges, Explained](https://cointelegraph.com/explained/blockchain-bridges-explained)
+- [peaceBridge: Connecting Ethereum Classic and Ethereum](https://medium.com/akomba/peace-bridge-connecting-ethereum-classic-and-ethereum-e306df01159f)
 
 ## License
 
