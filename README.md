@@ -73,6 +73,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Bitcoin on Polkadot: Proof-of-Concept for Trustless Bridge Shipped](https://medium.com/interlay/bitcoin-on-polkadot-proof-of-concept-for-trustless-bridge-shipped-6fb8e549bef0)
 - [Blockchain Bridges, Explained](https://cointelegraph.com/explained/blockchain-bridges-explained)
 - [peaceBridge: Connecting Ethereum Classic and Ethereum](https://medium.com/akomba/peace-bridge-connecting-ethereum-classic-and-ethereum-e306df01159f)
+- [Token Bridge - Crossing ERC20 Tokens between RSK & Ethereun](https://hackernoon.com/token-bridge-crossing-erc20-tokens-between-rsk-and-ethereum-231x3waj)
 
 ## License
 
