@@ -53,28 +53,19 @@ contract('Vault', function (accounts) {
     });
 
     it('transfer to vault generates lock event', async function () {
-        const txhash = (await web3.eth.sendTransaction({ from: accounts[0], to: this.vault.address, value: 1000, gas: 100000 })).transactionHash;
-
-        var receipt;
+        const txresult = await this.vault.sendTransaction({ from: accounts[0], value: 1000, gas: 100000 });
         
-        do {
-            receipt = await web3.eth.getTransactionReceipt(txhash);
-        } while(receipt == null);
-
         const vaultBalance = await web3.eth.getBalance(this.vault.address);  
         
         assert.equal(vaultBalance, 1000000 + 1000);
         
-        console.dir(receipt);
-        console.dir(receipt.logs[0].topics);
-        
-        const logs = receipt.logs;
+        const logs = txresult.logs;
         
         assert.ok(logs);
         assert.ok(Array.isArray(logs));
         assert.ok(logs.length);
         assert.equal(logs.length, 1);
-        
+
         assert.equal(logs[0].event, 'Lock');
         assert.equal(logs[0].args.sender, accounts[0]);
         assert.equal(logs[0].args.nlock, 2);

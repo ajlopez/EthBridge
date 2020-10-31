@@ -1,4 +1,4 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity ^0.6.0;
 
 contract Vault {
     address manager;
@@ -22,7 +22,7 @@ contract Vault {
         emit Release(receiver, ++nreleases, amount);
     }
     
-    function () external payable {
+    receive() external payable {
         emit Lock(msg.sender, ++nlocks, msg.value);
     }
 }
