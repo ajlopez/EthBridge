@@ -75,6 +75,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [peaceBridge: Connecting Ethereum Classic and Ethereum](https://medium.com/akomba/peace-bridge-connecting-ethereum-classic-and-ethereum-e306df01159f)
 - [Token Bridge - Crossing ERC20 Tokens between RSK & Ethereun](https://hackernoon.com/token-bridge-crossing-erc20-tokens-between-rsk-and-ethereum-231x3waj)
 - [Boring DAO, Decentralized Asset Bridge Accessing Different Blockchains](https://www.boringdao.com/)
+- [An Introduction to Binance Bridge](https://academy.binance.com/en/articles/an-introduction-to-binance-bridge)
 
 ## License
 
