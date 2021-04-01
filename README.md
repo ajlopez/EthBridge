@@ -77,6 +77,7 @@ Simple implementation using Solidity and JavaScript scripts.
 - [Boring DAO, Decentralized Asset Bridge Accessing Different Blockchains](https://www.boringdao.com/)
 - [An Introduction to Binance Bridge](https://academy.binance.com/en/articles/an-introduction-to-binance-bridge)
 - [Arbitrary Message Bridge](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)
+- [Ubix Ethereum Binance Bridge](https://ubix.network/bridge/)
 
 ## License
 
