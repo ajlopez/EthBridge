@@ -78,6 +78,8 @@ Simple implementation using Solidity and JavaScript scripts.
 - [An Introduction to Binance Bridge](https://academy.binance.com/en/articles/an-introduction-to-binance-bridge)
 - [Arbitrary Message Bridge](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)
 - [Ubix Ethereum Binance Bridge](https://ubix.network/bridge/)
+- [Sovryn Ethereum Binance Chain Bridge](https://twitter.com/SovrynBTC/status/1384799307539353602)
+- [SovrynBTC has built an ETH bridge and has a uniswap incentivized pair](https://twitter.com/anambroid/status/1388842740650217473?s=20)
 
 ## License
 
