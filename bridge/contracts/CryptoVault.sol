@@ -1,6 +1,6 @@
 pragma solidity ^0.6.0;
 
-contract CryptVault {
+contract CryptoVault {
     address manager;
     uint nreleases;
     uint nlocks;

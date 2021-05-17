@@ -5,24 +5,20 @@ const expectThrow = require('./utils').expectThrow;
 const promisify = require('./utils').promisify;
 
 contract('CryptoVault', function (accounts) {
+    let vault;
+    
     const creatorAccount = accounts[0];
     const managerAccount = accounts[1];
     const receiverAccount = accounts[2];
     
     beforeEach(async function () {
-        this.vault = await CryptoVault.new(managerAccount);
+        vault = await CryptoVault.new(managerAccount);
 
-        const txhash = (await web3.eth.sendTransaction({ from: accounts[0], to: this.vault.address, value: 1000000, gas: 100000 })).transactionHash;
-
-        var receipt;
-        
-        do {
-            receipt = await web3.eth.getTransactionReceipt(txhash);
-        } while(receipt == null);
+    await vault.sendTransaction({ from: creatorAccount, value: 1000000 });
     });
     
     it('initial ether balance for tests', async function () {
-        const vaultBalance = await web3.eth.getBalance(this.vault.address);
+        const vaultBalance = await web3.eth.getBalance(vault.address);
         
         assert.equal(vaultBalance, 1000000);
     });
@@ -30,9 +26,9 @@ contract('CryptoVault', function (accounts) {
     it('transfer to account using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
-        const result = await this.vault.transferTo(receiverAccount, 1000, { from: managerAccount });
+        const result = await vault.transferTo(receiverAccount, 1000, { from: managerAccount });
 
-        const vaultBalance = await web3.eth.getBalance(this.vault.address);  
+        const vaultBalance = await web3.eth.getBalance(vault.address);  
         
         assert.equal(vaultBalance, 1000000 - 1000);
         
@@ -53,9 +49,9 @@ contract('CryptoVault', function (accounts) {
     });
 
     it('transfer to vault generates lock event', async function () {
-        const txresult = await this.vault.sendTransaction({ from: accounts[0], value: 1000, gas: 100000 });
+        const txresult = await vault.sendTransaction({ from: accounts[0], value: 1000, gas: 100000 });
         
-        const vaultBalance = await web3.eth.getBalance(this.vault.address);  
+        const vaultBalance = await web3.eth.getBalance(vault.address);  
         
         assert.equal(vaultBalance, 1000000 + 1000);
         
@@ -75,7 +71,7 @@ contract('CryptoVault', function (accounts) {
     it('transfer to account without using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
-        expectThrow(this.vault.transferTo(receiverAccount, 1000, { from: creatorAccount }));
+        expectThrow(vault.transferTo(receiverAccount, 1000, { from: creatorAccount }));
     });
 });
 
