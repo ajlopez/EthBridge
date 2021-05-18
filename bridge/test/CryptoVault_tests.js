@@ -7,14 +7,14 @@ const promisify = require('./utils').promisify;
 contract('CryptoVault', function (accounts) {
     let vault;
     
-    const creatorAccount = accounts[0];
+    const alice = accounts[0];
     const managerAccount = accounts[1];
     const receiverAccount = accounts[2];
     
     beforeEach(async function () {
         vault = await CryptoVault.new(managerAccount);
 
-    await vault.sendTransaction({ from: creatorAccount, value: 1000000 });
+    await vault.sendTransaction({ from: alice, value: 1000000 });
     });
     
     it('initial ether balance for tests', async function () {
@@ -71,7 +71,7 @@ contract('CryptoVault', function (accounts) {
     it('transfer to account without using manager', async function () {
         const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
         
-        expectThrow(vault.transferTo(receiverAccount, 1000, { from: creatorAccount }));
+        expectThrow(vault.transferTo(receiverAccount, 1000, { from: alice }));
     });
 });
 
