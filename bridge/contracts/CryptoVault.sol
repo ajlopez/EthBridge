@@ -1,6 +1,8 @@
 pragma solidity ^0.6.0;
 
-contract CryptoVault {
+import '@openzeppelin/contracts/access/Ownable.sol';
+
+contract CryptoVault is Ownable {
     address manager;
     uint nreleases;
     uint nlocks;

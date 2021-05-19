@@ -14,9 +14,15 @@ contract('CryptoVault', function (accounts) {
     beforeEach(async function () {
         vault = await CryptoVault.new(managerAccount);
 
-    await vault.sendTransaction({ from: alice, value: 1000000 });
+        await vault.sendTransaction({ from: alice, value: 1000000 });
     });
     
+    it('initial owner', async function () {
+        const owner = await vault.owner();
+        
+        assert.equal(owner, alice);
+    });
+
     it('initial ether balance for tests', async function () {
         const vaultBalance = await web3.eth.getBalance(vault.address);
         
