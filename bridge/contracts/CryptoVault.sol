@@ -23,9 +23,5 @@ contract CryptoVault is Ownable {
         receiver.transfer(amount);
         emit Release(receiver, ++nreleases, amount);
     }
-    
-    receive() external payable {
-        emit Lock(msg.sender, ++nlocks, msg.value);
-    }
 }
 
