@@ -12,7 +12,7 @@ contract('CryptoVault', function (accounts) {
     const receiverAccount = accounts[2];
     
     beforeEach(async function () {
-        vault = await CryptoVault.new(managerAccount);
+        vault = await CryptoVault.new();
     });
 
     it('transfer to account using manager', async function () {
@@ -58,12 +58,6 @@ contract('CryptoVault', function (accounts) {
         assert.equal(logs[0].args.sender, accounts[0]);
         assert.equal(logs[0].args.nlock, 2);
         assert.equal(logs[0].args.amount, 1000);
-    });
-
-    it('transfer to account without using manager', async function () {
-        const initialReceiverBalance = await web3.eth.getBalance(receiverAccount);
-        
-        expectThrow(vault.transferTo(receiverAccount, 1000, { from: alice }));
     });
 });
 
