@@ -6,15 +6,14 @@ contract CryptoVault is Ownable {
     uint nreleases;
     uint nlocks;
 
-    event Lock(address sender, uint nlock, uint amount);
+    event Lock(address sender, address receiver, uint nlock, uint amount);
     event Release(address receiver, uint nrelease, uint amount);
     
     constructor() public {
     }
     
-    function transferTo(address payable receiver, uint amount) public {
-        receiver.transfer(amount);
-        emit Release(receiver, ++nreleases, amount);
+    function lockValue(address receiver) public payable {
+        emit Lock(msg.sender, receiver, ++nlocks, msg.value);
     }
 }
 
