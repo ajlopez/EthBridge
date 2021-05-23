@@ -1,7 +1,7 @@
 const CryptoVault = artifacts.require('./CryptoVault');
 const util = require('util');
+const truffleAssert = require('truffle-assertions');
 
-const expectThrow = require('./utils').expectThrow;
 const promisify = require('./utils').promisify;
 
 contract('CryptoVault', function (accounts) {
@@ -17,6 +17,15 @@ contract('CryptoVault', function (accounts) {
 
     it('lock value', async function () {
         const txresult = await vault.lockValue(charlie, { from: alice, value: 1000000 });
+        
+        truffleAssert.eventEmitted(txresult, 'Lock', 
+            function (ev) {
+                return ev.sender.toLowerCase() === alice.toLowerCase() &&
+                    ev.receiver.toLowerCase() === charlie.toLowerCase() &&
+                    ev.nlock == 1 &&
+                    ev.amount == 1000000;
+            }
+        );
 
         const vaultBalance = await web3.eth.getBalance(vault.address);  
         
