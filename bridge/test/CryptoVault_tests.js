@@ -22,7 +22,7 @@ contract('CryptoVault', function (accounts) {
             function (ev) {
                 return ev.sender.toLowerCase() === alice.toLowerCase() &&
                     ev.receiver.toLowerCase() === charlie.toLowerCase() &&
-                    ev.nlock == 1 &&
+                    ev.nlock == 0 &&
                     ev.amount == 1000000;
             }
         );
