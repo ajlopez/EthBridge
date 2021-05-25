@@ -30,6 +30,12 @@ contract('CryptoVault', function (accounts) {
         const vaultBalance = await web3.eth.getBalance(vault.address);  
         
         assert.equal(vaultBalance, 1000000);
+        
+        const lockedValue = await vault.lockedValue();
+        assert.equal(lockedValue, 1000000);
+        
+        const nlocks = await vault.nlocks();
+        assert.equal(nlocks, 1);
     });
 });
 

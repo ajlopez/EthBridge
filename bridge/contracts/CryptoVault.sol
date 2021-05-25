@@ -3,8 +3,8 @@ pragma solidity ^0.6.0;
 import '@openzeppelin/contracts/access/Ownable.sol';
 
 contract CryptoVault is Ownable {
-    uint nreleases;
-    uint nlocks;
+    uint public lockedValue;
+    uint public nlocks;
 
     event Lock(address sender, address receiver, uint nlock, uint amount);
     event Release(address receiver, uint nrelease, uint amount);
@@ -13,6 +13,7 @@ contract CryptoVault is Ownable {
     }
     
     function lockValue(address receiver) public payable {
+        lockedValue += msg.value;
         emit Lock(msg.sender, receiver, nlocks++, msg.value);
     }
 }
