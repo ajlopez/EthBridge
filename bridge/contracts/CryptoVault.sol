@@ -13,6 +13,7 @@ contract CryptoVault is Ownable {
     }
     
     function lockValue(address receiver) public payable {
+        require(msg.value > 0);
         lockedValue += msg.value;
         emit Lock(msg.sender, receiver, nlocks++, msg.value);
     }

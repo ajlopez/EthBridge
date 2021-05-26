@@ -37,5 +37,9 @@ contract('CryptoVault', function (accounts) {
         const nlocks = await vault.nlocks();
         assert.equal(nlocks, 1);
     });
+    
+    it('cannot lock value zero', async function () {
+        await truffleAssert.reverts(vault.lockValue(charlie, { from: alice }));
+    });
 });
 
